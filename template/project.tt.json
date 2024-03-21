@@ -1,0 +1,10 @@
+
+{
+  "miniprogramRoot": "./",
+  "projectname": "<%=packageName%>",
+  "appid": "testAppId",
+  "setting": {
+    "es6": true,
+    "minified": true
+  }
+}

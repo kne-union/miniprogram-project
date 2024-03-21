@@ -1,0 +1,38 @@
+{
+  "miniprogramRoot": "dist/",
+  "description": "<%=description%>",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": false,
+    "minified": true,
+    "ignoreUploadUnusedFiles": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false,
+    "packNpmRelationList": [],
+    "useIsolateContext": true,
+    "coverView": false,
+    "showShadowRootInWxmlPanel": false
+  },
+  "compileType": "miniprogram",
+  "srcMiniprogramRoot": "dist/",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "simulatorPluginLibVersion": {
+    "qywx_simulator_plugin": "2.20.3"
+  },
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "testAppId"
+}

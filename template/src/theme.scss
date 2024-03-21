@@ -1,0 +1,9 @@
+page, body, .adm-root-portal {
+  --adm-color-primary: #4F185A;
+
+  --adm-color-background-primary-opacity-1: #{rgba(#4F185A, 0.1)};
+
+  @for $i from 1 through 10 {
+    --adm-color-primary-#{$i}: #{rgba(#4F185A, $i / 10)};
+  }
+}

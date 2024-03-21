@@ -1,0 +1,110 @@
+{
+  "name": "<%=packageName%>",
+  "version": "0.1.0",
+  "description": "<%=description%>",
+  "templateInfo": {
+    "name": "default",
+    "typescript": false,
+    "css": "sass"
+  },
+  "scripts": {
+    "create": "cross-env MODULES_DEV_BASE_PATH='./src/components' modules-dev-create",
+    "init": "husky && npm run init-example",
+    "start": "npm run build:md &&npm run build:doc && run-p start:lib start:md start:doc start:example",
+    "build": "run-s build:lib build:md build:doc build:example",
+    "test": "run-s test:unit test:lint test:build",
+    "init-example": "mini-example install && create-md && mini-example build",
+    "build:md": "npx @kne/md-doc",
+    "start:md": "npx @kne/md-doc --watch",
+    "start:doc": "mini-example start",
+    "build:doc": "mini-example build",
+    "build:lib": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment --alias lodash=@kne/lodash-wechat --assertType inline",
+    "start:lib": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment --alias lodash=@kne/lodash-wechat --assertType inline",
+    "build:example": "cd example && npm run build",
+    "start:example": "cd example && cross-env NODE_ENV=production npm run build:weapp -- --watch",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "prettier": "prettier --config .prettierrc --write '{src/**/*,index,prompts}.{js,jsx,ts,tsx,json,css,scss}'",
+    "lint-staged": "npx lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kne-union/<%=name%>.git"
+  },
+  "keywords": [],
+  "author": "<%=process.env.USERNAME%>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kne-union/<%=name%>/issues"
+  },
+  "homepage": "https://github.com/kne-union/<%=name%>",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "peerDependencies": {
+    "@tarojs/components": "*",
+    "@tarojs/taro": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@kne/antd-taro": "^1.0.20",
+    "@kne/compose": "^0.1.0",
+    "@kne/global-context": "^1.0.0",
+    "@kne/lodash-wechat": "^4.17.21",
+    "@kne/mini-core": "^2.0.25",
+    "@kne/react-fetch": "^1.4.2",
+    "@kne/react-form": "^2.1.14",
+    "@kne/react-form-antd-taro": "^1.0.0",
+    "@tarojs/components": "3.6.23",
+    "@tarojs/helper": "3.6.23",
+    "@tarojs/plugin-framework-react": "3.6.23",
+    "@tarojs/plugin-platform-weapp": "3.6.23",
+    "@tarojs/react": "3.6.23",
+    "@tarojs/runtime": "3.6.23",
+    "@tarojs/shared": "3.6.23",
+    "@tarojs/taro": "3.6.23",
+    "axios": "^1.6.8",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.10",
+    "md5": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tarojs/components": "3.6.23",
+    "@tarojs/taro": "3.6.23",
+    "@kne/mini-example": "^0.1.9",
+    "@kne/microbundle": "^0.15.5",
+    "cross-env": "^7.0.3",
+    "husky": "^9.0.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

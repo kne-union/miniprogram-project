@@ -1,0 +1,37 @@
+{
+  "name": "@kne-template/miniprogram-project",
+  "version": "0.1.0",
+  "description": "创建一个Taro业务微信小程序",
+  "main": "index.js",
+  "scripts": {
+    "init": "husky",
+    "build:md": "npx @kne/md-doc",
+    "start:md": "npx @kne/md-doc --watch",
+    "prettier": "prettier --config .prettierrc --write '{libs/**/*,index}.{js,jsx,ts,tsx,json,css,scss}'",
+    "lint-staged": "npx lint-staged"
+  },
+  "lint-staged": {
+    "{libs/**/*,index}.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kne-union/miniprogram-project.git"
+  },
+  "keywords": ["template","wechat","miniprogram","Taro"],
+  "author": "Meetacoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kne-union/miniprogram-project/issues"
+  },
+  "homepage": "https://github.com/kne-union/miniprogram-project#readme",
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5"
+  }
+}
