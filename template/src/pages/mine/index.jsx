@@ -3,9 +3,9 @@ import {Image, View} from "@tarojs/components";
 import {AvatarPreview, useGlobalContext} from "@kne/mini-core";
 
 import {ApplicationLayout} from '@components';
-import femaleSrc from "@assets/female.svg";
-import maleSrc from "@assets/male.svg";
-import defaultAvatarSrc from "@assets/default_avatar.png";
+import femaleSrc from "../../assets/female.svg";
+import maleSrc from "../../assets/male.svg";
+import defaultAvatarSrc from "../../assets/default_avatar.png";
 import style from './style.module.scss';
 
 const MineContentInner = () => {

@@ -1,7 +1,7 @@
-import {mockJson} from '@mock';
+import {testJson} from '../../doc/mock';
 
 const getUserInfo = {
-  url: mockJson,
+  url: testJson,
   cache: 'user-info'
 };
 

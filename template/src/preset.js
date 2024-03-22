@@ -9,7 +9,6 @@ import {preset as formPreset} from '@kne/react-form-antd-taro';
 import {enumMapping, formRules} from "./common";
 import '@kne/antd-taro/dist/index.css';
 import '@kne/react-form-antd-taro/dist/index.css';
-import '@kne/mini-resume/dist/index.css';
 import '@kne/mini-core/dist/index.css';
 import './theme.scss';
 

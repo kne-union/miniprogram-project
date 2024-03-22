@@ -2,10 +2,10 @@ import React, {createContext, useContext} from 'react';
 import {getCache, useFetch, withFetch} from "@kne/react-fetch";
 import {CommonLoadingView, SetGlobal, usePreset} from '@kne/mini-core';
 import {View} from "@tarojs/components";
-import {Button, Result} from '@kne/antd-taro';
-import style from './style.module.scss';
-import Taro from "@tarojs/taro";
 import get from "lodash/get";
+
+import style from './style.module.scss';
+import {testJson} from '../../../doc/mock';
 
 const userInfoContext = createContext({});
 
@@ -49,13 +49,19 @@ export const withUserInfo = (WrappedComponent) => {
         }
       },
       transformResponse: (response) => {
-        const {data} = response;
-        if (data?.code === 401) {
-          errorCode = 401;
-        }
-        response.data = {
-          code: data?.code === 0 ? 200 : data?.code, msg: data?.msg, results: data?.data,
-        };
+        // ------START TODO 测试数据，请删除
+        response.data = testJson;
+        // ------END
+
+        // const {data} = response;
+        // if (data?.code === 401) {
+        //   errorCode = 401;
+        // }
+        // response.data = {
+        //   code: data?.code === 0 ? 200 : data?.code,
+        //   msg: data?.msg,
+        //   results: data?.data,
+        // };
         return response;
       },
       onRequestSuccess: (data) => {
@@ -67,27 +73,9 @@ export const withUserInfo = (WrappedComponent) => {
     if (isLoading && !userInfoCache.current) {
       return <View className={style['loading']}><CommonLoadingView/></View>;
     }
-    if (error) {
-      return errorCode === 401 ? null : (
-        <View className={style['error']}>
-          <Result
-            status="error"
-            title={error || "请求发生错误"}
-            description={<Button
-              fill="none"
-              color="primary"
-              onClick={() => {
-                Taro.redirectTo({
-                  url: '/packages/system/login/index'
-                });
-              }}
-            >
-              重新登录
-            </Button>}
-          />
-        </View>
-      )
-    }
+    // if (error) {
+    //   Taro.switchTab({url: "/pages/index/index"})
+    // }
 
     if (!isComplete && !data && !userInfoCache.current) {
       return null;
@@ -95,7 +83,8 @@ export const withUserInfo = (WrappedComponent) => {
 
     return (
       <UserInfoInner
-        data={data || userInfoCache.current}
+        data={testJson.data}
+        // data={data || userInfoCache.current}
         reload={reload}
         refresh={refresh}
       >

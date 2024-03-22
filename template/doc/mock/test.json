@@ -1,13 +1,11 @@
 {
   "msg": "",
   "data": {
-    "appUserInfo": {
-      "uid": 107,
-      "englishName": "My Haires goods",
-      "name": "李白",
-      "gender": "M",
-      "phone": "18658541522"
-    }
+    "uid": 107,
+    "englishName": "My Haires goods",
+    "name": "李白",
+    "gender": "M",
+    "phone": "18658541522"
   },
   "code": 0,
   "success": true,

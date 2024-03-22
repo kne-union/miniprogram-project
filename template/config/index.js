@@ -7,7 +7,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-http', '@tarojs/plugin-platform-alipay-dd'],
+  plugins: ['@tarojs/plugin-http'],
   defineConstants: {},
   alias: {
     'lodash': '@kne/lodash-wechat',
