@@ -1,5 +1,7 @@
+import {mockJson} from '@mock';
+
 const getUserInfo = {
-  url: '/api/v1/user/user/user',
+  url: mockJson,
   cache: 'user-info'
 };
 
