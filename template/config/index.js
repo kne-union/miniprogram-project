@@ -11,8 +11,6 @@ const config = {
   defineConstants: {},
   alias: {
     'lodash': '@kne/lodash-wechat',
-    '@mock': require.resolve('../doc/mock'),
-    '@assets': require.resolve('../src/assets'),
     '@components': require.resolve('../src/components'),
   },
   copy: {
