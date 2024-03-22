@@ -10,7 +10,7 @@
   "scripts": {
     "create": "cross-env MODULES_DEV_BASE_PATH='./src/components' modules-dev-create",
     "init": "husky && npm run init-example",
-    "start": "npm run build:md &&npm run build:doc && run-p start:lib start:md start:doc start:example",
+    "start": "npm run build:md &&npm run build:doc && run-p dev:weapp start:md start:doc start:example",
     "build": "run-s build:weapp build:md build:doc build:example",
     "build:weapp": "taro build --type weapp",
     "build:dd": "taro build --type dd",

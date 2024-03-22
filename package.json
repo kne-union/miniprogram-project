@@ -1,6 +1,6 @@
 {
   "name": "@kne-template/miniprogram-project",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "创建一个Taro业务微信小程序",
   "main": "index.js",
   "scripts": {

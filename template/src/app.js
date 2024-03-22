@@ -1,4 +1,3 @@
-import './assets/font/iconfont.css';
 import preset from './preset';
 import {Global} from '@kne/mini-core';
 import './app.scss';
